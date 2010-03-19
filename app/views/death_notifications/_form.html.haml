@@ -1,18 +1,18 @@
 %p
   %label{:for => "death_notification_submitter_id"} Submitter
-  = f.text_field :submitter_id, :class => 'text'
+  = f.text_field :submitter_id
 %p
   %label{:for => "death_notification_relationship_to_deceased"} Your relationship to deceased
-  = f.text_field :relationship_to_deceased, :class => 'text'
+  = f.text_field :relationship_to_deceased
 %p
   %label{:for => "death_notification_deceased_first_name"} Deceased first name
-  = f.text_field :deceased_first_name, :class => 'text'
+  = f.text_field :deceased_first_name
 %p
   %label{:for => "death_notification_deceased_family_name"} Deceased family name
-  = f.text_field :deceased_family_name, :class => 'text'
+  = f.text_field :deceased_family_name
 %p
   %label{:for => "death_notification_deceased_maiden_surname"} Deceased maiden surname
-  = f.text_field :deceased_maiden_surname, :class => 'text'
+  = f.text_field :deceased_maiden_surname
 %p
   %label{:for => "death_notification_date_of_death"} Date of death
   = f.date_select :date_of_death
@@ -21,25 +21,25 @@
   = f.date_select :date_of_birth
 %p
   %label{:for => "death_notification_place_of_birth"} Place of birth
-  = f.text_field :place_of_birth, :class => 'text'
+  = f.text_field :place_of_birth
 %p
   %label{:for => "death_notification_national_insurance_number"} National insurance number
-  = f.text_field :national_insurance_number, :class => 'text'
+  = f.text_field :national_insurance_number
 %p
   %label{:for => "death_notification_tax_reference_number"} Tax reference number
-  = f.text_field :tax_reference_number, :class => 'text'
+  = f.text_field :tax_reference_number
 %p
-  %label{:for => "death_notification_nhs_number"} Nhs number
-  = f.text_field :nhs_number, :class => 'text'
+  %label{:for => "death_notification_nhs_number"} NHS number
+  = f.text_field :nhs_number
 %p
   %label{:for => "death_notification_last_address"} Last address
-  = f.text_area :last_address, :class => 'text'
+  = f.text_area :last_address, :rows => 3
 %p
   %label{:for => "death_notification_last_postcode"} Last postcode
-  = f.text_field :last_postcode, :class => 'text'
+  = f.text_field :last_postcode
 %p
   %label{:for => "death_notification_receiving_state_pension"} Receiving state pension
   = f.check_box :receiving_state_pension
 %p
   %label{:for => "death_notification_receiving_other_state_benefit"} Receiving other state benefit
-  = f.text_field :receiving_other_state_benefit, :class => 'text'
+  = f.text_field :receiving_other_state_benefit
