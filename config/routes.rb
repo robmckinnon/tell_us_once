@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :submitters
 
-  map.root :controller => "application"
+  map.root :controller => "application", :action => "home"
   
   # The priority is based upon order of creation: first created -> highest priority.
 
