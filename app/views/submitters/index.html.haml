@@ -1,0 +1,26 @@
+%h1 Listing submitters
+
+%table
+  %tr
+    %th First name
+    %th Family name
+    %th Address
+    %th Postcode
+    %th Email
+    %th Phone
+  - @submitters.each do |submitter|
+    %tr
+      %td= h submitter.first_name
+      %td= h submitter.family_name
+      %td= h submitter.address
+      %td= h submitter.postcode
+      %td= h submitter.email
+      %td= h submitter.phone
+        
+      %td= link_to 'Show', object_url(submitter)
+      %td= link_to 'Edit', edit_object_url(submitter)
+      %td= link_to 'Destroy', object_url(submitter), :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+=link_to 'New submitter', new_object_url

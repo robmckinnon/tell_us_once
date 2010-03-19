@@ -1,0 +1,22 @@
+%p
+  %strong First name:
+  =h @submitter.first_name
+%p
+  %strong Family name:
+  =h @submitter.family_name
+%p
+  %strong Address:
+  =h @submitter.address
+%p
+  %strong Postcode:
+  =h @submitter.postcode
+%p
+  %strong Email:
+  =h @submitter.email
+%p
+  %strong Phone:
+  =h @submitter.phone
+
+= link_to 'Edit', edit_object_url
+|
+= link_to 'Back', collection_url
