@@ -10,6 +10,8 @@ gem 'delayed_job'
 gem 'rest-client'
 gem 'whenever'
 gem 'sqlite3-ruby'
+gem 'compass'
+gem 'compass-susy-plugin'
 # gem 'heroku'
 # gem 'thin'
 
