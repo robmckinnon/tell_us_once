@@ -21,3 +21,4 @@ config/schedule.rb
 tmp
 git_repo_lock.txt
 *-data
+public/stylesheets/*.css
