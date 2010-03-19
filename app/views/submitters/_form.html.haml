@@ -1,18 +1,18 @@
 %p
-  %label{:for => "submitter_first_name"} First name:
+  %label{:for => "submitter_first_name"} Your first name(s) *
   = f.text_field :first_name
 %p
-  %label{:for => "submitter_family_name"} Family name:
+  %label{:for => "submitter_family_name"} Your family name *
   = f.text_field :family_name
 %p
-  %label{:for => "submitter_address"} Address:
-  = f.text_area :address
+  %label{:for => "submitter_address"} Your address *
+  = f.text_area :address, :rows => 3
 %p
-  %label{:for => "submitter_postcode"} Postcode:
+  %label{:for => "submitter_postcode"} Your postcode *
   = f.text_field :postcode
 %p
-  %label{:for => "submitter_email"} Email:
+  %label{:for => "submitter_email"} Your email *
   = f.text_field :email
 %p
-  %label{:for => "submitter_phone"} Phone:
+  %label{:for => "submitter_phone"} Your phone number
   = f.text_field :phone
