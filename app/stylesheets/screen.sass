@@ -52,17 +52,22 @@ body
 form
   +columns(10,12)
   +pad(0,1)
-
-input[type="text"]
+fieldset
+  :border 1px solid #999999
+  p
+    :margin-left 1em
+input[type="text"], textarea
   :border 1px solid #999999
   :padding 0.5em
-  :width 20em
   :background none
+input[type="text"]
+  :width 25em
+textarea
+  :width 25em
 input[type="text"]:active, input[type="text"]:hover, input[type="text"]:focus
   :border 1px solid #333333
-
-input[type="text"]
-  :background none
+textarea:active, textarea:hover, textarea:focus
+  :border 1px solid #333333
 
 /* @end */
 
