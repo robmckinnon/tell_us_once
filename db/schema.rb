@@ -9,29 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100319171244) do
-
-  create_table "death_notifications", :force => true do |t|
-    t.integer  "submitter_id"
-    t.string   "relationship_to_deceased"
-    t.string   "deceased_first_name"
-    t.string   "deceased_family_name"
-    t.string   "deceased_maiden_surname"
-    t.date     "date_of_death"
-    t.date     "date_of_birth"
-    t.string   "place_of_birth"
-    t.string   "national_insurance_number"
-    t.string   "tax_reference_number"
-    t.string   "nhs_number"
-    t.text     "last_address"
-    t.string   "last_postcode"
-    t.boolean  "receiving_state_pension"
-    t.string   "receiving_other_state_benefit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "death_notifications", ["submitter_id"], :name => "index_death_notifications_on_submitter_id"
+ActiveRecord::Schema.define(:version => 20100319162922) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -54,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20100319171244) do
     t.integer  "change_notification_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "department"
   end
 
   create_table "submitters", :force => true do |t|
@@ -68,3 +47,4 @@ ActiveRecord::Schema.define(:version => 20100319171244) do
   end
 
 end
+
