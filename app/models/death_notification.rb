@@ -1,5 +1,4 @@
 class DeathNotification < ActiveRecord::Base
+  include ChangeNotificationMethods
   
-  belongs_to :submitter
-
 end
