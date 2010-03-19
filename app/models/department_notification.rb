@@ -16,6 +16,15 @@ class DepartmentNotification < ActiveRecord::Base
   end
   
   def send_message
-    DepartmentMailer.deliver_notification(self)
+    if endpoint =~ EmailAddress
+      DepartmentMailer.deliver_notification(self)
+    else
+      _http_post(endpoint)
+    end
+  end
+  
+  protected
+  def _http_post(url)
+    
   end
 end
