@@ -9,3 +9,9 @@ Feature: Select change notification type
     And I should see "Birth"
     And I should see "Change of address"
     And I should see "Death"
+    
+  Scenario: Submit death notification
+    Given I am on the home page
+    When I follow "Death"
+    Then I should see "Please enter the following details"
+

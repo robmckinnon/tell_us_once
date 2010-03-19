@@ -1,0 +1,49 @@
+%p
+  %strong Submitter:
+  =h @death_notification.submitter_id
+%p
+  %strong Relationship to deceased:
+  =h @death_notification.relationship_to_deceased
+%p
+  %strong Deceased first name:
+  =h @death_notification.deceased_first_name
+%p
+  %strong Deceased family name:
+  =h @death_notification.deceased_family_name
+%p
+  %strong Deceased maiden surname:
+  =h @death_notification.deceased_maiden_surname
+%p
+  %strong Date of death:
+  =h @death_notification.date_of_death
+%p
+  %strong Date of birth:
+  =h @death_notification.date_of_birth
+%p
+  %strong Place of birth:
+  =h @death_notification.place_of_birth
+%p
+  %strong National insurance number:
+  =h @death_notification.national_insurance_number
+%p
+  %strong Tax reference number:
+  =h @death_notification.tax_reference_number
+%p
+  %strong Nhs number:
+  =h @death_notification.nhs_number
+%p
+  %strong Last address:
+  =h @death_notification.last_address
+%p
+  %strong Last postcode:
+  =h @death_notification.last_postcode
+%p
+  %strong Receiving state pension:
+  =h @death_notification.receiving_state_pension
+%p
+  %strong Receiving other state benefit:
+  =h @death_notification.receiving_other_state_benefit
+
+= link_to 'Edit', edit_object_url
+|
+= link_to 'Back', collection_url

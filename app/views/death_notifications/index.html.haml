@@ -1,0 +1,44 @@
+%h1 Listing death_notifications
+
+%table
+  %tr
+    %th Submitter
+    %th Relationship to deceased
+    %th Deceased first name
+    %th Deceased family name
+    %th Deceased maiden surname
+    %th Date of death
+    %th Date of birth
+    %th Place of birth
+    %th National insurance number
+    %th Tax reference number
+    %th Nhs number
+    %th Last address
+    %th Last postcode
+    %th Receiving state pension
+    %th Receiving other state benefit
+  - @death_notifications.each do |death_notification|
+    %tr
+      %td= h death_notification.submitter_id
+      %td= h death_notification.relationship_to_deceased
+      %td= h death_notification.deceased_first_name
+      %td= h death_notification.deceased_family_name
+      %td= h death_notification.deceased_maiden_surname
+      %td= h death_notification.date_of_death
+      %td= h death_notification.date_of_birth
+      %td= h death_notification.place_of_birth
+      %td= h death_notification.national_insurance_number
+      %td= h death_notification.tax_reference_number
+      %td= h death_notification.nhs_number
+      %td= h death_notification.last_address
+      %td= h death_notification.last_postcode
+      %td= h death_notification.receiving_state_pension
+      %td= h death_notification.receiving_other_state_benefit
+        
+      %td= link_to 'Show', object_url(death_notification)
+      %td= link_to 'Edit', edit_object_url(death_notification)
+      %td= link_to 'Destroy', object_url(death_notification), :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+=link_to 'New death_notification', new_object_url
