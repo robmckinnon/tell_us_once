@@ -1,4 +1,5 @@
 bin
+Gemfile
 .bundle
 vendor/plugins
 vendor/bundler_gems
