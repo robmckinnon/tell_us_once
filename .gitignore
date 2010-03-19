@@ -1,4 +1,5 @@
 bin
+db/development_structure.sql
 Gemfile
 .bundle
 vendor/plugins

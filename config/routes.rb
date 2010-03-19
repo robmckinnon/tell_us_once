@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :death_notifications
+
 
   map.resources :submitters
 
