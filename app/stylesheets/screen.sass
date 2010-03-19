@@ -36,15 +36,13 @@ body
       :border-bottom 0
 #content
   +columns(8,12)
-  +pad(1,3)
+  +pad(1,1)
   +full
-
+    
 #footer
   +columns(2)
   +prefix(10)
   +full
-
-
 
 /* @end */
 
@@ -53,11 +51,16 @@ body
 
 form
   +columns(10,12)
-  +pad(1,1)
+  +pad(0,1)
 
 input[type="text"]
-  :width 16em
+  :border 1px solid #999999
+  :padding 0.5em
+  :width 20em
   :background none
+input[type="text"]:active, input[type="text"]:hover, input[type="text"]:focus
+  :border 1px solid #333333
+
 input[type="text"]
   :background none
 
