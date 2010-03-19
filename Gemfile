@@ -9,7 +9,7 @@ gem 'mysql'
 gem 'delayed_job'
 gem 'rest-client'
 gem 'whenever'
-gem 'sqlite3-ruby'
+# gem 'sqlite3-ruby'
 # gem 'heroku'
 # gem 'thin'
 
