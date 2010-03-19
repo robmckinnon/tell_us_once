@@ -1,0 +1,14 @@
+!!! Strict
+%html
+  %head
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+  %body
+    #page
+      #header
+        %h1 Tell Us Once
+      #content
+        = @content_for_layout
+      #footer
+        %p.license
+          Copyright 02010
