@@ -19,12 +19,24 @@ class DepartmentNotification < ActiveRecord::Base
     if endpoint =~ EmailAddress
       DepartmentMailer.deliver_notification(self)
     else
-      _http_post(endpoint)
+      _http_post(endpoint, self.to_xml)
     end
   end
   
-  protected
-  def _http_post(url)
+  def to_xml(options={})
+    xml = Builder::XmlMarkup.new(:indent => 2)
+    xml.instruct! unless options[:skip_instruct]
+    xml.notification do
+      xml.tag!(:submitter, 'foo')
+    end
     
+  end
+  
+  protected
+  def _http_post(url, xml_notification)
+    return if RAILS_ENV == 'test'
+    res = Net::HTTP.post(URI.parse(url), xml_notification)
+    logger.debug { "Posted message to to #{url}\n#{xml_notification}\n Response = res" }
+    res
   end
 end

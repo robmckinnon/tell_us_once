@@ -23,3 +23,5 @@ tmp
 git_repo_lock.txt
 *-data
 public/stylesheets/*.css
+config/smtp_gmail.yml
+
