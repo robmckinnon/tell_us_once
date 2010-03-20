@@ -1,8 +1,9 @@
 - if !@death_notification.sent?
   %p.instructions Preview the details and send
+
   = render :partial => "death_notification", :object => @death_notification
 
-  - form_for(:death_notification, :url => 'death_notifications/create') do |f|
+  - form_for(:death_notification, :url => 'death_notifications/create', :html => {:class=>'reedit'}) do |f|
     - [:relationship_to_deceased, :deceased_first_name, :deceased_family_name, :deceased_maiden_surname, :date_of_death, :date_of_birth, :place_of_birth, :national_insurance_number, :tax_reference_number, :nhs_number, :last_address, :last_postcode, :receiving_state_pension, :receiving_other_state_benefit].each do |attribute|
       = f.hidden_field(attribute)
     - f.fields_for :submitter_attributes do |s|
@@ -10,7 +11,7 @@
         = s.hidden_field(attribute).sub('<input ','<input value="'+ @death_notification.submitter.send(attribute) + '" ')
     = f.submit "Re-edit Details"
 
-  - form_for(:death_notification, :url => 'death_notifications/create') do |f|
+  - form_for(:death_notification, :url => 'death_notifications/create', :html => {:class=>'send'}) do |f|
     - [:relationship_to_deceased, :deceased_first_name, :deceased_family_name, :deceased_maiden_surname, :date_of_death, :date_of_birth, :place_of_birth, :national_insurance_number, :tax_reference_number, :nhs_number, :last_address, :last_postcode, :receiving_state_pension, :receiving_other_state_benefit].each do |attribute|
       = f.hidden_field(attribute)
     - f.fields_for :submitter_attributes do |s|
