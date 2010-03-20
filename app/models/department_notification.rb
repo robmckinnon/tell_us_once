@@ -14,6 +14,7 @@ class DepartmentNotification < ActiveRecord::Base
   
   def perform
     send_message
+    update_attribute(:processed_at, Time.now)
   end
   
   def send_message
