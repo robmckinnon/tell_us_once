@@ -2,9 +2,12 @@ config_file = "#{RAILS_ROOT}/config/smtp_gmail.yml"
 raise "Sorry, you must have #{config_file}" unless File.exists?(config_file)
 
 config_options = YAML.load_file(config_file) 
-ActionMailer::Base.smtp_settings = {
+
+require 'smtp_tls'
+
+ActionMailer::Base.server_settings = {
   :address => "smtp.gmail.com",
-  :port => 587,
+  :port => "587",
+  :domain => "tellusonce.govtrace.com",
   :authentication => :plain,
-  :enable_starttls_auto => true
 }.merge(config_options) # Configuration options override default options

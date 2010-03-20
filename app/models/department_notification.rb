@@ -41,7 +41,12 @@ class DepartmentNotification < ActiveRecord::Base
   protected
   def _http_post(url, xml_notification)
     return if RAILS_ENV == 'test'
-    res = Net::HTTP.post(URI.parse(url), xml_notification)
+    url = URI.parse(url)
+    req = Net::HTTP::Post.new(url.path)
+    req.basic_auth RECIPIENT_AUTH_USER, RECIPIENT_AUTH_PWD
+    # .post(path, data, headers)
+    
+    # res = Net::HTTP.post(URI.parse(url), xml_notification)
     logger.debug { "Posted message to to #{url}\n#{xml_notification}\n Response = res" }
     res
   end
