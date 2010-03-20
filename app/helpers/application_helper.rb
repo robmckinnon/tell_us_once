@@ -8,7 +8,18 @@ module ApplicationHelper
   def input_and_error_message field, model=:death_notification, &block
     error = span_error_message_on(model, field)
     if error.blank?
-      yield field
+      if model.is_a?(Symbol)
+        yield field
+      else
+        input = yield field
+        if value = model.send(field)
+          if !input[/value/]
+            input.sub!('<input ',"<input value='#{value}' ")
+            input.sub!('></textarea>',">#{value}</textarea>")
+          end
+        end
+        input
+      end
     else
       input = yield(field)
       if input.include?('<div class="fieldWithErrors"><input')
