@@ -12,7 +12,7 @@ module ApplicationHelper
         yield field
       else
         input = yield field
-        if value = model.send(field)
+        if model.is_a?(ActiveRecord::Base) && value = model.send(field)
           if !input[/value/]
             input.sub!('<input ',"<input value='#{value}' ")
             input.sub!('></textarea>',">#{value}</textarea>")
