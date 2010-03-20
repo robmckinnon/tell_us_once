@@ -1,6 +1,7 @@
 
 # require File.expand_path(File.join(File.dirname(__FILE__), "..", "vendor", "bundler_gems", "environment"))
 
+=begin
 begin
   # Require the preresolved locked set of gems.
   require File.expand_path('../../.bundle/environment', __FILE__)
@@ -16,3 +17,4 @@ rescue LoadError
     Bundler.setup
   end
 end
+=end
