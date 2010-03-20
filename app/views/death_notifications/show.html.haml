@@ -1,5 +1,6 @@
 %fieldset
   %legend Your details
+  = render :partial => "submitters/submitter", :object => @death_notification.submitter
   %p
     %strong Your relationship to deceased:
     =h @death_notification.relationship_to_deceased

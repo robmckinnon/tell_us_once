@@ -1,7 +1,7 @@
 %h1 Please enter the following details:
 
 - unless error_messages_for(:death_notification).blank?
-  %p You need to complete some fields below:
+  %p You need to complete some fields below.
 
 - form_for(:death_notification, :url => collection_url) do |f|
   = render :partial => "form", :locals => { :f => f }
