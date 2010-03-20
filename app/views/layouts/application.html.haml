@@ -7,7 +7,8 @@
     #page
       #header
         %h1 DirectGov
-        %h2 Tell Us Once
+        %h2
+          =link_to 'Tell Us Once', root_path
       #content
         = @content_for_layout
       #footer
