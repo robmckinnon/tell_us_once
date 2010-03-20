@@ -18,7 +18,9 @@ Rails::Initializer.run do |config|
   config.gem "haml"
   config.gem "resource_controller"
   config.gem "compass"
-  config.gem "compass-susy-plugin"
+  # config.gem "compass-susy-plugin"
+  config.gem 'shoulda'
+  config.gem 'factory_girl'
   config.gem "mysql"
   config.gem "delayed_job"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
