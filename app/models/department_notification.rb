@@ -44,9 +44,8 @@ class DepartmentNotification < ActiveRecord::Base
     url = URI.parse(url)
     req = Net::HTTP::Post.new(url.path)
     req.basic_auth RECIPIENT_AUTH_USER, RECIPIENT_AUTH_PWD
-    # .post(path, data, headers)
-    
-    # res = Net::HTTP.post(URI.parse(url), xml_notification)
+    req.set_form_data({'notification'=>xml_notification}, ';')
+    res = Net::HTTP.new(url.host, url.port).start {|http| http.request(req) }
     logger.debug { "Posted message to to #{url}\n#{xml_notification}\n Response = res" }
     res
   end
