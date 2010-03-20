@@ -1,0 +1,17 @@
+=========================
+NEW NOTIFICATION
+=========================
+
+Submitter details
+_________________
+<%- @submitter.attributes.each do |attrib_name, attrib_val| -%>
+<%= attrib_name %>: <%= attrib_val %>
+<%- end -%>
+
+
+
+Notification details
+_________________
+<%- @change_notification.attributes.each do |attrib_name, attrib_val| -%>
+<%= attrib_name %>: <%= attrib_val %>
+<%- end -%>
