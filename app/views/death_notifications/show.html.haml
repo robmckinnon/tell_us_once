@@ -1,3 +1,10 @@
+%p.instructions
+  Thank you. We've sent the details to all relevant departments:
+  = %Q|#{@death_notification.department_notifications.collect(&:department).to_sentence}.|
+%p.instructions
+  Each department will contact you at your email address with further information.
+%p.instructions
+  We sent the following details:
 %fieldset
   %legend Your details
   = render :partial => "submitters/submitter", :object => @death_notification.submitter
