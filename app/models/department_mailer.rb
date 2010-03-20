@@ -6,6 +6,7 @@ class DepartmentMailer < ActionMailer::Base
     @subject      = "New #{department_notification.change_notification_type} :: " + department_notification.submitter.full_name
     @sent_on      = Time.now
     @body[:change_notification] = department_notification.change_notification
+    @body[:submitter] = department_notification.submitter
     @headers      = {}
   end
 
