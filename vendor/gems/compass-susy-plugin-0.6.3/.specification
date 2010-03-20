@@ -1,0 +1,114 @@
+--- !ruby/object:Gem::Specification 
+name: compass-susy-plugin
+version: !ruby/object:Gem::Version 
+  prerelease: false
+  segments: 
+  - 0
+  - 6
+  - 3
+  version: 0.6.3
+platform: ruby
+authors: 
+- Eric Meyer
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-07-12 00:00:00 +01:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: compass
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 0
+        version: "0"
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: echoe
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id002
+description: Susy is a ground-up native Compass plugin grid system that takes full advantage of Sass' capabilities to remove the tedium from grid-based web design.
+email: eric@oddbird.net
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- lib/susy/compass_plugin.rb
+- lib/susy/sass_extensions.rb
+- lib/susy.rb
+- README.mkdn
+files: 
+- lib/susy/compass_plugin.rb
+- lib/susy/sass_extensions.rb
+- lib/susy.rb
+- Manifest
+- Rakefile
+- README.mkdn
+- sass/susy/_grid.sass
+- sass/susy/_utils.sass
+- sass/susy/_text.sass
+- sass/susy/_susy.sass
+- templates/project/_base.sass
+- templates/project/screen.sass
+- templates/project/print.sass
+- templates/project/ie.sass
+- templates/project/manifest.rb
+- VERSION
+- LICENSE.txt
+- docs/tutorial/index.mkdn
+- docs/tutorial/figures/susy_element.png
+- docs/tutorial/figures/susy_grid.png
+- compass-susy-plugin.gemspec
+has_rdoc: true
+homepage: http://github.com/ericam/compass-susy-plugin
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --line-numbers
+- --inline-source
+- --title
+- Compass-Susy-plugin
+- --main
+- README.mkdn
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 1
+      - 2
+      version: "1.2"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.6
+signing_key: 
+specification_version: 3
+summary: A Compass grid system plugin.
+test_files: []
+
