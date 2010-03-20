@@ -18,7 +18,7 @@ module ChangeNotificationMethods
     receiver.send :include, InstanceMethods
     receiver.belongs_to :submitter
     receiver.has_many :department_notifications, :as => :change_notification
-    receiver.validates_presence_of :submitter_id
+    # receiver.validates_presence_of :submitter_id
     receiver.after_create :create_department_notifications
   end
 end
