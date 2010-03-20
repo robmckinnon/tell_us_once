@@ -47,10 +47,16 @@ body
     :margin
       :top 0.3em
       :bottom 1em
+    a
+      :color white
+      :text-decoration none
 #content
   +columns(8,12)
   +pad(1,1)
   +full
+  .instructions
+    +columns(12,12)
+    :font-size 1.5em
     
 #footer
   +columns(2)
@@ -62,13 +68,21 @@ body
   
 /* @group COMPONENTS by type */
 
+legend
+  :margin-left 1em
+  :font-size 1.3em
 form
   +columns(10,12)
   +pad(0,1)
+form[class="button-to"]
+  :margin 1em
+  
 fieldset
   :border 1px solid #999999
   p
     :margin-left 1em
+    label
+      :font-size .8em
 input[type="text"], textarea
   :border 1px solid #999999
   :padding 0.5em
@@ -85,8 +99,8 @@ input[type="submit"]
   :background none repeat scroll 0 0 #F1F1F1
   :border 1px solid #777777
   :cursor pointer
-  :font-size medium
-  :padding 0.25em 0.5em
+  :font-size large
+  :padding 0.5em 1em
 input[type="submit"]:active, input[type="submit"]:hover, input[type="submit"]:focus
   :background none repeat scroll 0 0 #E2E2E2
   :border 1px solid #111111

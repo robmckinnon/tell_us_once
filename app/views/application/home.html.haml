@@ -1,7 +1,8 @@
-%p
+%p.instructions
   Tell us about a:
-  %ul
-    %li Birth
-    %li Change of address
-    %li= link_to 'Death', new_death_notification_path
-
+%div
+  = button_to "Birth", new_death_notification_path
+  = button_to "Change of address", new_death_notification_path
+  = button_to 'Death', new_death_notification_path
+%p.instructions
+  We'll tell all the Government departments that need to know.
