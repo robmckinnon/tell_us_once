@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :death_notifications
 
+  map.resources :death_notifications
+  map.connect '/death_notifications/new', :conditions => { :method => :post }, :controller => 'death_notifications', :action => 'new'
 
   map.resources :submitters
 
