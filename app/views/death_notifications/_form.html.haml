@@ -18,10 +18,10 @@
     = input_and_error_message(:deceased_maiden_surname) { |a| f.text_field a }
   %p
     %label{:for => "death_notification_date_of_death"} Date of death *
-    = f.date_select :date_of_death, :start_year => Time.now.year - 1, :end_year => Time.now.year, :order => [:day, :month, :year]
+    = f.date_select :date_of_death, :start_year => Date.today.year - 1, :end_year => Date.today.year, :order => [:day, :month, :year]
   %p
     %label{:for => "death_notification_date_of_birth"} Date of birth
-    = f.date_select :date_of_birth, :start_year => Time.now.year - 130, :end_year => Time.now.year, :order => [:day, :month, :year]
+    = f.date_select :date_of_birth, :start_year => Date.today.year - 130, :end_year => Date.today.year, :order => [:day, :month, :year]
   %p
     %label{:for => "death_notification_place_of_birth"} Place of birth
     = f.text_field :place_of_birth
