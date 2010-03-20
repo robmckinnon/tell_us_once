@@ -6,4 +6,5 @@
 
 - form_for(:death_notification, :url => collection_url) do |f|
   = render :partial => "form", :locals => { :f => f }
+  = f.hidden_field(:sent, :value=>'1')
   %p= submit_tag "Send Details"
