@@ -1,5 +1,7 @@
 class DeathNotificationsController < ResourceController::Base
   
+  before_filter :authenticate, :except => ['new','create']
+
   before_filter :respond_not_found_if_notification_sent_or_bad_authenticity_token, :except => ['new','create']
 
   def new

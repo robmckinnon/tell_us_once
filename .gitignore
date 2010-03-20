@@ -1,6 +1,7 @@
 bin
 config/initializers/constants.rb
 config/deploy.rb
+config/auth.yml
 config/passenger
 db/development_structure.sql
 Gemfile
