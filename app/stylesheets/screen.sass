@@ -21,19 +21,32 @@ body
   +container
 
 #header
+  :-moz-border-radius 7px 7px 7px 7px
   +columns(12)
   +pad(1,1)
   +full
+  :background #ff5b00
   :margin
     :top 3em
     :bottom 1.5em
   h1
     +columns(9,12)
     +full(12)
-    /* +replace-text("polipeople.png", "left") */
+    +replace-text("logo.png", "left")
     :height 3em
+    :margin
+      :top 0.5em
     &:focus, &:hover, &:active
       :border-bottom 0
+  h2
+    +columns(9,12)
+    +full(12)
+    :color white
+    :font-family sans-serif
+    :font-size 3em
+    :margin
+      :top 0.3em
+      :bottom 1em
 #content
   +columns(8,12)
   +pad(1,1)
