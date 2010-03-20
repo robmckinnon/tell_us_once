@@ -24,8 +24,5 @@
     = %Q|#{@death_notification.department_notifications.collect(&:department).to_sentence}.|
   %p.instructions
     Each department will contact you at your email address with further information.
-  %p.instructions
-    We sent the following details:
-  = render :partial => "death_notification", :object => @death_notification
 
   = link_to 'Return to Tell Us Once home page', root_path

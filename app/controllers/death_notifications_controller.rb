@@ -18,7 +18,7 @@ class DeathNotificationsController < ResourceController::Base
       flash[:error] = 'Choose another notification to send.'
       flash.delete(:notification_just_sent)
       redirect_to root_path
-    else    
+    else   
       notification_params = params['death_notification']
       if notification_params
         notification_params['authenticity_token'] = params[:authenticity_token]
