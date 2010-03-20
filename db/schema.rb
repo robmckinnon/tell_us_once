@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100319171244) do
+ActiveRecord::Schema.define(:version => 20100320111843) do
 
   create_table "death_notifications", :force => true do |t|
     t.integer  "submitter_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20100319171244) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "department"
+    t.datetime "processed_at"
   end
 
   create_table "submitters", :force => true do |t|

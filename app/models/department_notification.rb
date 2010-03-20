@@ -2,6 +2,7 @@ class DepartmentNotification < ActiveRecord::Base
   belongs_to :submitter
   belongs_to :change_notification, :polymorphic => true
   validates_presence_of :submitter_id, :department
+  alias_method :old_to_xml, :to_xml
   
   def self.access_details
     DepartmentNotificationDetails
@@ -13,6 +14,7 @@ class DepartmentNotification < ActiveRecord::Base
   
   def perform
     send_message
+    update_attribute(:processed_at, Time.now)
   end
   
   def send_message
@@ -23,14 +25,18 @@ class DepartmentNotification < ActiveRecord::Base
     end
   end
   
-  def to_xml(options={})
-    xml = Builder::XmlMarkup.new(:indent => 2)
-    xml.instruct! unless options[:skip_instruct]
-    xml.notification do
-      xml.tag!(:submitter, 'foo')
-    end
+  # def to_xml(options={})
+    # xml = Builder::XmlMarkup.new(:indent => 2)
+    # xml.instruct! unless options[:skip_instruct]
+    # xml.notification do
+    #   xml.text!!(:submitter, 'foo')
+    # end
     
+  # end
+  def to_xml(options={}, &block)
+    old_to_xml({:include => {:change_notification => {:root => 'death_notification'}, :submitter => {}}, :root => 'notification'}.merge(options), &block)
   end
+  
   
   protected
   def _http_post(url, xml_notification)
