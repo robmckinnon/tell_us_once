@@ -5,7 +5,7 @@ config_options = YAML.load_file(config_file)
 
 require 'smtp_tls'
 
-ActionMailer::Base.server_settings = {
+ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
   :port => "587",
   :domain => "tellusonce.govtrace.com",
