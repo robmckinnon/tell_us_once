@@ -10,7 +10,15 @@ module ApplicationHelper
     if error.blank?
       yield field
     else
-      input = yield(field).sub('<div class="fieldWithErrors"><input','<input class="fieldWithErrors"').sub('></div>','>')
+      input = yield(field)
+      if input.include?('<div class="fieldWithErrors"><input')
+        input.sub!('<div class="fieldWithErrors"><input','<input class="fieldWithErrors"')
+        input.sub!('></div>','>')
+      elsif input[/<input/]
+        input.sub!('<input','<input class="fieldWithErrors"')
+      elsif input[/<textarea/]
+        input.sub!('<textarea','<textarea class="fieldWithErrors"')
+      end
       "#{input} #{error}"
     end
   end

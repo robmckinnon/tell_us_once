@@ -60,14 +60,23 @@ input[type="text"], textarea
   :border 1px solid #999999
   :padding 0.5em
   :background none
-input[type="text"]
   :width 25em
-textarea
-  :width 25em
-input[type="text"]:active, input[type="text"]:hover, input[type="text"]:focus
-  :border 1px solid #333333
-textarea:active, textarea:hover, textarea:focus
-  :border 1px solid #333333
+  :color black
+input[type="text"].fieldWithErrors, textarea.fieldWithErrors
+  :border-width 2px
+  :border-color darkred
+input[type="text"]:active, input[type="text"]:hover, input[type="text"]:focus, textarea:active, textarea:hover, textarea:focus
+  :border-color #333333
+input[type="submit"]
+  :-moz-border-radius 7px 7px 7px 7px
+  :background none repeat scroll 0 0 #F1F1F1
+  :border 1px solid #777777
+  :cursor pointer
+  :font-size medium
+  :padding 0.25em 0.5em
+input[type="submit"]:active, input[type="submit"]:hover, input[type="submit"]:focus
+  :background none repeat scroll 0 0 #E2E2E2
+  :border 1px solid #111111
 
 /* @end */
 

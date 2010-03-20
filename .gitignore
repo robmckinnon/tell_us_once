@@ -1,5 +1,6 @@
 bin
 config/deploy.rb
+config/passenger
 db/development_structure.sql
 Gemfile
 .bundle

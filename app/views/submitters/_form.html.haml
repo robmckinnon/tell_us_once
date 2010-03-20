@@ -1,23 +1,18 @@
 %p
   %label{:for => "submitter_first_name"} Your first name(s) *
-  = f.text_field :first_name
-  = span_error_message_on(submitter, :first_name)
+  = input_and_error_message(:first_name, submitter) {|a| f.text_field a }
 %p
   %label{:for => "submitter_family_name"} Your family name *
-  = f.text_field :family_name
-  = span_error_message_on(submitter, :family_name)
+  = input_and_error_message(:family_name, submitter) {|a| f.text_field a }
 %p
   %label{:for => "submitter_address"} Your address *
-  = f.text_area :address, :rows => 3
-  = span_error_message_on(submitter, :address)
+  = input_and_error_message(:address, submitter) {|a| f.text_area a, :rows => 3 }
 %p
   %label{:for => "submitter_postcode"} Your postcode *
-  = f.text_field :postcode
-  = span_error_message_on(submitter, :postcode)
+  = input_and_error_message(:postcode, submitter) {|a| f.text_field a }
 %p
   %label{:for => "submitter_email"} Your email *
-  = f.text_field :email
-  = span_error_message_on(submitter, :email)
+  = input_and_error_message(:email, submitter) {|a| f.text_field a }
 %p
   %label{:for => "submitter_phone"} Your phone number
   = f.text_field :phone

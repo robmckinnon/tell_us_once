@@ -6,5 +6,3 @@
 - form_for(:death_notification, :url => collection_url) do |f|
   = render :partial => "form", :locals => { :f => f }
   %p= submit_tag "Preview before sending"
-
-%p= link_to 'Back', collection_url
