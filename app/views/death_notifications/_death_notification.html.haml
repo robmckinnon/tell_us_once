@@ -1,0 +1,56 @@
+%fieldset
+  %legend Your details
+  = render :partial => "submitters/submitter", :object => death_notification.submitter
+  %p
+    %strong Your relationship to deceased:
+    =h death_notification.relationship_to_deceased
+%fieldset
+  %legend Deceased's details
+  %p
+    %strong First name:
+    =h death_notification.deceased_first_name
+  %p
+    %strong Family name:
+    =h death_notification.deceased_family_name
+  - unless death_notification.deceased_maiden_surname.blank?
+    %p
+      %strong Maiden surname:
+      =h death_notification.deceased_maiden_surname
+  %p
+    %strong Date of death:
+    =h death_notification.date_of_death.to_s(:long)
+  - unless death_notification.date_of_birth.blank?
+    %p
+      %strong Date of birth:
+      =h death_notification.date_of_birth.to_s(:long)
+  - unless death_notification.place_of_birth.blank?
+    %p
+      %strong Place of birth:
+      =h death_notification.place_of_birth
+  - unless death_notification.national_insurance_number.blank?
+    %p
+      %strong National insurance number:
+      =h death_notification.national_insurance_number
+  - unless death_notification.tax_reference_number.blank?
+    %p
+      %strong Tax reference number:
+      =h death_notification.tax_reference_number
+  - unless death_notification.nhs_number.blank?
+    %p
+      %strong NHS number:
+      =h death_notification.nhs_number
+  - unless death_notification.last_address.blank?
+    %p
+      %strong Last address:
+      =h death_notification.last_address
+  - unless death_notification.last_postcode.blank?
+    %p
+      %strong Last postcode:
+      =h death_notification.last_postcode
+  %p
+    %strong Receiving state pension:
+    = death_notification.receiving_state_pension ? 'yes' : 'no'
+  - unless death_notification.receiving_other_state_benefit.blank?
+    %p
+      %strong Receiving other state benefit:
+      =h death_notification.receiving_other_state_benefit

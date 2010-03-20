@@ -1,65 +1,31 @@
-%p.instructions
-  Thank you. We've sent the details to all relevant departments:
-  = %Q|#{@death_notification.department_notifications.collect(&:department).to_sentence}.|
-%p.instructions
-  Each department will contact you at your email address with further information.
-%p.instructions
-  We sent the following details:
-%fieldset
-  %legend Your details
-  = render :partial => "submitters/submitter", :object => @death_notification.submitter
-  %p
-    %strong Your relationship to deceased:
-    =h @death_notification.relationship_to_deceased
-%fieldset
-  %legend Deceased's details
-  %p
-    %strong First name:
-    =h @death_notification.deceased_first_name
-  %p
-    %strong Family name:
-    =h @death_notification.deceased_family_name
-  - unless @death_notification.deceased_maiden_surname.blank?
-    %p
-      %strong Maiden surname:
-      =h @death_notification.deceased_maiden_surname
-  %p
-    %strong Date of death:
-    =h @death_notification.date_of_death.to_s(:long)
-  - unless @death_notification.date_of_birth.blank?
-    %p
-      %strong Date of birth:
-      =h @death_notification.date_of_birth.to_s(:long)
-  - unless @death_notification.place_of_birth.blank?
-    %p
-      %strong Place of birth:
-      =h @death_notification.place_of_birth
-  - unless @death_notification.national_insurance_number.blank?
-    %p
-      %strong National insurance number:
-      =h @death_notification.national_insurance_number
-  - unless @death_notification.tax_reference_number.blank?
-    %p
-      %strong Tax reference number:
-      =h @death_notification.tax_reference_number
-  - unless @death_notification.nhs_number.blank?
-    %p
-      %strong NHS number:
-      =h @death_notification.nhs_number
-  - unless @death_notification.last_address.blank?
-    %p
-      %strong Last address:
-      =h @death_notification.last_address
-  - unless @death_notification.last_postcode.blank?
-    %p
-      %strong Last postcode:
-      =h @death_notification.last_postcode
-  %p
-    %strong Receiving state pension:
-    = @death_notification.receiving_state_pension ? 'yes' : 'no'
-  - unless @death_notification.receiving_other_state_benefit.blank?
-    %p
-      %strong Receiving other state benefit:
-      =h @death_notification.receiving_other_state_benefit
+- if !@death_notification.sent?
+  %p.instructions Preview the details and send
+  = render :partial => "death_notification", :object => @death_notification
 
-= link_to 'Return to Tell Us Once home page', root_path
+  - form_for(:death_notification, :url => 'death_notifications/create') do |f|
+    - [:relationship_to_deceased, :deceased_first_name, :deceased_family_name, :deceased_maiden_surname, :date_of_death, :date_of_birth, :place_of_birth, :national_insurance_number, :tax_reference_number, :nhs_number, :last_address, :last_postcode, :receiving_state_pension, :receiving_other_state_benefit].each do |attribute|
+      = f.hidden_field(attribute)
+    - f.fields_for :submitter_attributes do |s|
+      - [:first_name, :family_name, :address, :postcode, :email, :phone].each do |attribute|
+        = s.hidden_field(attribute).sub('<input ','<input value="'+ @death_notification.submitter.send(attribute) + '" ')
+    = f.submit "Re-edit Details"
+
+  - form_for(:death_notification, :url => 'death_notifications/create') do |f|
+    - [:relationship_to_deceased, :deceased_first_name, :deceased_family_name, :deceased_maiden_surname, :date_of_death, :date_of_birth, :place_of_birth, :national_insurance_number, :tax_reference_number, :nhs_number, :last_address, :last_postcode, :receiving_state_pension, :receiving_other_state_benefit].each do |attribute|
+      = f.hidden_field(attribute)
+    - f.fields_for :submitter_attributes do |s|
+      - [:first_name, :family_name, :address, :postcode, :email, :phone].each do |attribute|
+        = s.hidden_field(attribute).sub('<input ','<input value="'+ @death_notification.submitter.send(attribute) + '" ')
+    = f.hidden_field(:sent, :value=>'1')
+    = f.submit "Send Details"
+- else
+  %p.instructions
+    Thank you. We've sent the details to all relevant departments:
+    = %Q|#{@death_notification.department_notifications.collect(&:department).to_sentence}.|
+  %p.instructions
+    Each department will contact you at your email address with further information.
+  %p.instructions
+    We sent the following details:
+  = render :partial => "death_notification", :object => @death_notification
+
+  = link_to 'Return to Tell Us Once home page', root_path
