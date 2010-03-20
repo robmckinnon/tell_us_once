@@ -1,3 +1,10 @@
+%p.instructions
+  Thank you. We've sent the details to all relevant departments:
+  = %Q|#{@death_notification.department_notifications.collect(&:department).to_sentence}.|
+%p.instructions
+  Each department will contact you at your email address with further information.
+%p.instructions
+  We sent the following details:
 %fieldset
   %legend Your details
   = render :partial => "submitters/submitter", :object => @death_notification.submitter
@@ -5,7 +12,7 @@
     %strong Your relationship to deceased:
     =h @death_notification.relationship_to_deceased
 %fieldset
-  %legend Deceased details
+  %legend Deceased's details
   %p
     %strong First name:
     =h @death_notification.deceased_first_name
@@ -55,4 +62,4 @@
       %strong Receiving other state benefit:
       =h @death_notification.receiving_other_state_benefit
 
-= link_to 'Edit', edit_object_url
+= link_to 'Return to Tell Us Once home page', root_path

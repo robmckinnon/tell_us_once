@@ -17,4 +17,12 @@ class ApplicationController < ActionController::Base
     @crumbtrail = "Error: page cannot be found"
     render :template => 'public/404.html', :status => 404
   end
+
+  def authenticate
+    auth = YAML.load_file(RAILS_ROOT+'/config/auth.yml')
+    auth.symbolize_keys!
+    authenticate_or_request_with_http_basic do |id, password|
+      id == auth[:user] && password == auth[:password]
+    end
+  end
 end

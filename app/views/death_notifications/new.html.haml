@@ -1,8 +1,10 @@
-%p Please tell us the following:
 
-- unless error_messages_for(:death_notification).blank?
-  %p You need to complete some fields below.
+- if error_messages_for(:death_notification).blank?
+  %p.instructions Please tell us the following details.
+- else
+  %p.instructions We need you to fill in some fields below before we can handle your request.
 
 - form_for(:death_notification, :url => collection_url) do |f|
   = render :partial => "form", :locals => { :f => f }
+  = f.hidden_field(:sent, :value=>'1')
   %p= submit_tag "Send Details"

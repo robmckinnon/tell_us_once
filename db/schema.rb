@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100320111843) do
+ActiveRecord::Schema.define(:version => 20100320132437) do
 
   create_table "death_notifications", :force => true do |t|
     t.integer  "submitter_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20100320111843) do
     t.string   "receiving_other_state_benefit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "authenticity_token"
   end
 
   add_index "death_notifications", ["submitter_id"], :name => "index_death_notifications_on_submitter_id"

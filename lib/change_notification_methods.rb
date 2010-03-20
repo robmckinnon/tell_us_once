@@ -4,6 +4,9 @@ module ChangeNotificationMethods
   end
   
   module InstanceMethods
+    def sent?
+      !department_notifications.empty?
+    end
     private
     def create_department_notifications
       change_type = self.class.to_s.tableize.sub('_notifications','').to_sym
@@ -11,7 +14,7 @@ module ChangeNotificationMethods
         notification = DepartmentNotification.create!(:submitter => submitter, :change_notification => self, :department => department)
         Delayed::Job.enqueue(notification)
       end
-    end
+    end    
   end
   
   def self.included(receiver)
