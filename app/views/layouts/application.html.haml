@@ -13,4 +13,16 @@
       #content
         = @content_for_layout
       #footer
-        %p.license
+        .rsproduct
+          .rslogo
+            = image_tag('rs_bigger.png', :class=>'logo')
+          %div
+            %p.about
+              This working prototype/proof-of-concept was constructed as part
+              %br
+              of the 
+              = link_to('Rewired State: DotGovLabs','http://rewiredstate.org/events/dotgovlabs')
+              hackday.
+              %br
+              Read our project page for an 
+              = link_to('explanation of the site','http://rewiredstate.org/projects/tellusonce-gov')+'.'

@@ -56,6 +56,7 @@ body
   +columns(8,12)
   +pad(1,1)
   +full
+  :margin-bottom 2em
   .instructions
     +columns(12,12)
     :font-size 1.5em
@@ -63,9 +64,18 @@ body
     :margin 0.5em
     
 #footer
-  +columns(2)
-  +prefix(10)
-  +full
+  :padding-top 2em
+  .rsproduct
+    +columns(12,12)
+    .rslogo
+      +pad(1,1)
+      +columns(2,0)
+    .about
+      +pad(2,1)
+      +columns(10,4)
+      :margin 0.5em
+      :margin-left 1em
+      :margin-top 0em
 
 /* @end */
 
